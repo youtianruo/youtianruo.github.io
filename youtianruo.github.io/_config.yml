@@ -1,0 +1,225 @@
+﻿# Site Settings
+title: "Tianruo You"
+name: "Tianruo You"
+description: "Mathematics Student at UC Berkeley"
+url: "https://youtianruo.github.io"
+baseurl: ""
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+timezone: America/Los_Angeles
+
+# Site Author
+author:
+  name: "Tianruo You"
+  avatar: "/images/profile.jpg"
+  bio: "Mathematics student at UC Berkeley with research interests in topology, differential geometry, and computational mathematics."
+  location: "Albany, CA"
+  email: "tianruo.you@berkeley.edu"
+  phone: "+1 (805) 724-9206"
+  website: "http://www.youtianruo.com"
+  twitter: ""
+  google_scholar: ""
+  github: "youtianruo"
+  linkedin: ""
+  orcid: ""
+  researchgate: ""
+  mendeley: ""
+  academia: ""
+  cv: "/files/cv.pdf"
+
+# Site Settings
+locale: "en-US"
+encoding: "utf-8"
+future: false
+show_excerpts: true
+read_time: true
+words_per_minute: 200
+
+# Outputting
+incremental: false
+limit_posts: 0
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-scholar
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+# Collections
+collections:
+  publications:
+    output: true
+    sort_by: year
+    sort_order: descending
+  talks:
+    output: true
+    sort_by: date
+    sort_order: descending
+  teaching:
+    output: true
+    sort_by: date
+    sort_order: descending
+  portfolio:
+    output: true
+    sort_by: date
+    sort_order: descending
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      layout: "talk"
+  - scope:
+      path: ""
+      type: "teaching"
+    values:
+      layout: "teaching"
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "portfolio"
+
+# Social Media Links
+social:
+  - icon: "fab fa-twitter"
+    icon_pack: "fab"
+    name: "Twitter"
+    url: ""
+  - icon: "fab fa-github"
+    icon_pack: "fab"
+    name: "GitHub"
+    url: "https://github.com/youtianruo"
+  - icon: "fab fa-linkedin"
+    icon_pack: "fab"
+    name: "LinkedIn"
+    url: ""
+  - icon: "fas fa-envelope"
+    icon_pack: "fas"
+    name: "Email"
+    url: "mailto:tianruo.you@berkeley.edu"
+
+# Navigation
+navigation:
+  - title: "About"
+    url: "/"
+  - title: "CV"
+    url: "/cv/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "Talks"
+    url: "/talks/"
+  - title: "Teaching"
+    url: "/teaching/"
+  - title: "Portfolio"
+    url: "/portfolio/"
+
+# Footer
+footer:
+  links:
+    - icon: "fas fa-envelope"
+      icon_pack: "fas"
+      name: "Email"
+      url: "mailto:tianruo.you@berkeley.edu"
+    - icon: "fab fa-github"
+      icon_pack: "fab"
+      name: "GitHub"
+      url: "https://github.com/youtianruo"
+    - icon: "fas fa-globe"
+      icon_pack: "fas"
+      name: "Website"
+      url: "http://www.youtianruo.com"
+
+# SEO
+seo:
+  type: "Person"
+  name: "Tianruo You"
+  url: "https://youtianruo.github.io"
+  image: "/images/profile.jpg"
+  sameAs:
+    - "https://github.com/youtianruo"
+    - "http://www.youtianruo.com"
+
+# Analytics
+google_analytics: ""
+google_tag_manager: ""
+
+# Comments
+disqus:
+  shortname: ""
+
+# Search
+search: true
+search_full_content: true
+
+# Theme
+theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - .bundle/
+  - .git/
+  - .gitignore
+  - README.md
+  - LICENSE
+  - Dockerfile
+  - docker-compose.yaml
+  - .devcontainer/
+  - .github/
