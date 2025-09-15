@@ -250,16 +250,20 @@
       </section>
 
       <!-- CV / Downloads -->
-      <section id="cv">
-        <div class="section-title"><h3>CV</h3></div>
+      <section id="cv" aria-labelledby="cv-title">
+        <h2 id="cv-title" class="section-title">CV</h2>
         <div class="card">
           <p>Download a concise CV or view the full resume.</p>
           <p>
-            <a class="btn" href="cv.pdf" download⬇️ Download CV (PDF)</a>
+            <!-- Make sure this path matches where the PDF actually lives -->
+            <a class="btn" href="/assets/Tianruo_You_CV.pdf"
+               download="Tianruo_You_CV.pdf"
+               type="application/pdf">⬇️ Download CV (PDF)</a>
             <a class="btn" href="https://youtianruo.github.io/" target="_blank" rel="noopener">🌐 Full Resume / Site</a>
           </p>
         </div>
       </section>
+
 
       <!-- Contact -->
       <section id="contact">
@@ -345,4 +349,5 @@
   </style>
 </body>
 </html>
+
 
