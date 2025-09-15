@@ -7,6 +7,7 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -65,11 +66,134 @@
             padding-top: 20px;
             text-align: center;
             color: #666;
+=======
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 11pt;
+        }
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            color: #000000;
+        }
+        .header p {
+            margin: 2px 0;
+            font-size: 11pt;
+        }
+        .header a {
+            color: #000000;
+            text-decoration: none;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 15px 0 8px 0;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #000000;
+        }
+        .experience-item {
+            margin-bottom: 12px;
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+        .experience-title {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .experience-location {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .experience-subtitle {
+            font-style: italic;
+            font-size: 10pt;
+            color: #333;
+        }
+        .experience-date {
+            font-style: italic;
+            font-size: 10pt;
+            color: #333;
+        }
+        .experience-details {
+            margin-left: 15px;
+            margin-top: 4px;
+        }
+        .experience-details ul {
+            margin: 4px 0;
+            padding-left: 15px;
+        }
+        .experience-details li {
+            margin-bottom: 2px;
+            font-size: 10pt;
+        }
+        .coursework {
+            font-size: 10pt;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .contact-info span {
+            font-size: 11pt;
+        }
+        @media print {
+            body {
+                font-size: 10pt;
+            }
+            .container {
+                max-width: none;
+                padding: 0.3in;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+>>>>>>> e3e7d1275d2ddb14649d85dcbfe82c266a598501
         }
     </style>
 </head>
 <body>
     <div class="container">
+<<<<<<< HEAD
         <header>
             <div style="display: flex; align-items: center; gap: 20px;">
                 <img src="https://via.placeholder.com/120x120/2a7ae2/ffffff?text=Tianruo+You" 
@@ -141,3 +265,135 @@
     </div>
 </body>
 </html>
+=======
+        <div class="header">
+            <h1><a href="http://youtianruo.com/">Tianruo You</a></h1>
+            <p>730 Kinkead Way, Albany, CA 94706</p>
+            <div class="contact-info">
+                <span><a href="mailto:tianruo.you@berkeley.edu">tianruo.you@berkeley.edu</a></span>
+                <span>+1 (805) 724-9206</span>
+                <span><a href="http://youtianruo.com/">http://www.youtianruo.com</a></span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">UC Berkeley</div>
+                        <div class="experience-subtitle">Bachelor of Arts in Mathematics  GPA: 4.00</div>
+                    </div>
+                    <div class="experience-date">Aug. 2025 -- Jun. 2026 (Expected)</div>
+                </div>
+                <div class="experience-location">Albany, CA</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Vanderbilt University</div>
+                        <div class="experience-subtitle">Bachelor of Arts in Mathematics  GPA: 4.00</div>
+                    </div>
+                    <div class="experience-date">Aug. 2024 -- May. 2025</div>
+                </div>
+                <div class="experience-location">Nashville, TN</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">UC Santa Barbara</div>
+                        <div class="experience-subtitle">Bachelor of Arts in Applied Mathematics  GPA: 4.00</div>
+                    </div>
+                    <div class="experience-date">Sep. 2023 -- Jun. 2024</div>
+                </div>
+                <div class="experience-location">Santa Barbara, CA</div>
+            </div>
+
+            <div class="coursework">
+                Relevant Coursework: Advanced Matrix Computations, Advanced Linear Algebra, Abstract Algebra, Real Analysis, Differential Geometry, Topology.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Research Experiences</div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Hairy Ball Theorem and Degree Theory Exploration</div>
+                        <div class="experience-subtitle">Research Student under Galen Liang</div>
+                    </div>
+                    <div class="experience-date">Aug. 2025 - Present</div>
+                </div>
+                <div class="experience-location">Berkeley, CA</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Applied degree theory to vector fields on spheres, using the pathway toward the Hairy Ball Theorem to strengthen understanding of algebraic topology methods, invariants such as the degree of a map, and the role of topological obstructions.</li>
+                        <li>Co-authoring a thesis on degree theory as an entry point into topology, emphasizing its utility in defining map degree, connecting manifold invariants, and framing classical results like the Hairy Ball Theorem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Paul Atzberger Research Group</div>
+                        <div class="experience-subtitle">Research Student under Paul Atzberger</div>
+                    </div>
+                    <div class="experience-date">Nov. 2023 - Jun. 2024</div>
+                </div>
+                <div class="experience-location">Santa Barbara, CA</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Simulated cryptocurrency price triangulation using stochastic processes to model arbitrage opportunities, providing a quantitative explanation of the "kimchi premium."</li>
+                        <li>Applied a stochastic immersed boundary method to simulate fluid–structure interactions at microscopic length scales, advancing computational modeling of complex physical systems.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">NSF Big-Bee Project: Trait Digitalization of Anthophila</div>
+                        <div class="experience-subtitle">Researcher</div>
+                    </div>
+                    <div class="experience-date">Aug. 2023 - Present</div>
+                </div>
+                <div class="experience-location">Santa Barbara, CA | Berkeley, CA</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Developed a computer vision pipeline (OpenCV, scikit-learn, Python) to quantify disruptive camouflage in bees by detecting and clustering visual hotspots.</li>
+                        <li>Implemented a volumetric measurement pipeline with Agisoft Metashape to model and compare size variation in Bombus species through 3D reconstruction and computational morphometrics.</li>
+                        <li>Processed high-resolution imaging sets with ImageJ and Zerene Stacker to generate ultra-resolution photos, contributing finalized images to the NSF Big-Bee library, with one exhibited at the UCSB Main Library and the California Nature Art Museum.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Professional Experiences</div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Syriac Text Digitalization and Database Development</div>
+                        <div class="experience-subtitle">Data Science Assistant under David A. Michelson</div>
+                    </div>
+                    <div class="experience-date">Aug. 2024 - May. 2025</div>
+                </div>
+                <div class="experience-location">Nashville, TN</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Repaired discrepancies in the Syriaca.org database by tracing entries back to original Syriac sources and applying targeted HTML edits, supporting the accurate digitalization of Syriac Christian manuscripts.</li>
+                        <li>Improved the accuracy and stability of the Syriac Reference Portal, enabling scholars to more reliably search, cross-reference, and analyze Syriac Christian texts.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+>>>>>>> e3e7d1275d2ddb14649d85dcbfe82c266a598501

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -400,3 +401,407 @@
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Content Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .editor-section {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .preview {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .code-output {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+        .copy-btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .copy-btn:hover {
+            background: #3182ce;
+        }
+        .section-title {
+            color: #2a7ae2;
+            border-bottom: 2px solid #2a7ae2;
+            padding-bottom: 5px;
+        }
+        .instructions {
+            background: #e6f3ff;
+            border-left: 4px solid #2a7ae2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>📝 Website Content Editor</h1>
+    
+    <div class="instructions">
+        <h3>How to Use This Editor</h3>
+        <ol>
+            <li><strong>Fill in the fields</strong> below with your information</li>
+            <li><strong>Copy the generated code</strong> for each section</li>
+            <li><strong>Edit your index.html file</strong> and replace the corresponding sections</li>
+            <li><strong>Upload to GitHub</strong> to see changes on your live site</li>
+        </ol>
+    </div>
+
+    <div class="editor-section">
+        <h2 class="section-title">👤 Header Section (Name & Title)</h2>
+        
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" value="Tianruo You" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="title">Your Title:</label>
+            <input type="text" id="title" value="Mathematics Student at UC Berkeley" oninput="updatePreview()">
+        </div>
+        
+        <div class="preview">
+            <h3>Preview:</h3>
+            <h1 id="name-preview">Tianruo You</h1>
+            <p id="title-preview">Mathematics Student at UC Berkeley</p>
+        </div>
+        
+        <div class="code-output" id="header-code">
+&lt;h1&gt;Tianruo You&lt;/h1&gt;
+&lt;p&gt;Mathematics Student at UC Berkeley&lt;/p&gt;
+        </div>
+        <button class="copy-btn" onclick="copyCode('header-code')">Copy Header Code</button>
+    </div>
+
+    <div class="editor-section">
+        <h2 class="section-title">📖 About Me Section</h2>
+        
+        <div class="form-group">
+            <label for="about1">First Paragraph:</label>
+            <textarea id="about1" oninput="updatePreview()">I am Tianruo You, a mathematics student at UC Berkeley with research interests in topology, differential geometry, and computational mathematics. I am currently pursuing my Bachelor of Arts in Mathematics at UC Berkeley, where I maintain a perfect 4.00 GPA.</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="about2">Second Paragraph:</label>
+            <textarea id="about2" oninput="updatePreview()">My academic journey has taken me through multiple prestigious institutions, including Vanderbilt University and UC Santa Barbara, where I also achieved perfect GPAs in mathematics programs. My research focuses on exploring fundamental concepts in topology and differential geometry, particularly through the lens of degree theory and its applications to classical results like the Hairy Ball Theorem.</textarea>
+        </div>
+        
+        <div class="preview">
+            <h3>Preview:</h3>
+            <p id="about1-preview">I am Tianruo You, a mathematics student at UC Berkeley...</p>
+            <p id="about2-preview">My academic journey has taken me through...</p>
+        </div>
+        
+        <div class="code-output" id="about-code">
+&lt;p&gt;I am Tianruo You, a mathematics student at UC Berkeley...&lt;/p&gt;
+&lt;p&gt;My academic journey has taken me through...&lt;/p&gt;
+        </div>
+        <button class="copy-btn" onclick="copyCode('about-code')">Copy About Code</button>
+    </div>
+
+    <div class="editor-section">
+        <h2 class="section-title">🔬 Research Interests</h2>
+        
+        <div class="form-group">
+            <label for="interest1">Interest 1:</label>
+            <input type="text" id="interest1" value="Topology: Degree theory, algebraic topology methods, and topological obstructions" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="interest2">Interest 2:</label>
+            <input type="text" id="interest2" value="Differential Geometry: Vector fields on manifolds and geometric structures" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="interest3">Interest 3:</label>
+            <input type="text" id="interest3" value="Computational Mathematics: Stochastic processes, fluid-structure interactions, and computer vision applications" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="interest4">Interest 4:</label>
+            <input type="text" id="interest4" value="Applied Mathematics: Cryptocurrency modeling, computational morphometrics, and digital humanities" oninput="updatePreview()">
+        </div>
+        
+        <div class="preview">
+            <h3>Preview:</h3>
+            <ul>
+                <li id="interest1-preview"><strong>Topology</strong>: Degree theory, algebraic topology methods, and topological obstructions</li>
+                <li id="interest2-preview"><strong>Differential Geometry</strong>: Vector fields on manifolds and geometric structures</li>
+                <li id="interest3-preview"><strong>Computational Mathematics</strong>: Stochastic processes, fluid-structure interactions, and computer vision applications</li>
+                <li id="interest4-preview"><strong>Applied Mathematics</strong>: Cryptocurrency modeling, computational morphometrics, and digital humanities</li>
+            </ul>
+        </div>
+        
+        <div class="code-output" id="interests-code">
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;Topology&lt;/strong&gt;: Degree theory, algebraic topology methods, and topological obstructions&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Differential Geometry&lt;/strong&gt;: Vector fields on manifolds and geometric structures&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Computational Mathematics&lt;/strong&gt;: Stochastic processes, fluid-structure interactions, and computer vision applications&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Applied Mathematics&lt;/strong&gt;: Cryptocurrency modeling, computational morphometrics, and digital humanities&lt;/li&gt;
+&lt;/ul&gt;
+        </div>
+        <button class="copy-btn" onclick="copyCode('interests-code')">Copy Interests Code</button>
+    </div>
+
+    <div class="editor-section">
+        <h2 class="section-title">🎓 Education</h2>
+        
+        <div class="form-group">
+            <label for="education1">Education 1:</label>
+            <input type="text" id="education1" value="UC Berkeley - Bachelor of Arts in Mathematics, GPA: 4.00 (Aug. 2025 – Jun. 2026, Expected)" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="education2">Education 2:</label>
+            <input type="text" id="education2" value="Vanderbilt University - Bachelor of Arts in Mathematics, GPA: 4.00 (Aug. 2024 – May. 2025)" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="education3">Education 3:</label>
+            <input type="text" id="education3" value="UC Santa Barbara - Bachelor of Arts in Applied Mathematics, GPA: 4.00 (Sep. 2023 – Jun. 2024)" oninput="updatePreview()">
+        </div>
+        
+        <div class="preview">
+            <h3>Preview:</h3>
+            <ul>
+                <li id="education1-preview"><strong>UC Berkeley</strong> - Bachelor of Arts in Mathematics, GPA: 4.00 (Aug. 2025 – Jun. 2026, Expected)</li>
+                <li id="education2-preview"><strong>Vanderbilt University</strong> - Bachelor of Arts in Mathematics, GPA: 4.00 (Aug. 2024 – May. 2025)</li>
+                <li id="education3-preview"><strong>UC Santa Barbara</strong> - Bachelor of Arts in Applied Mathematics, GPA: 4.00 (Sep. 2023 – Jun. 2024)</li>
+            </ul>
+        </div>
+        
+        <div class="code-output" id="education-code">
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;UC Berkeley&lt;/strong&gt; - Bachelor of Arts in Mathematics, GPA: 4.00 (Aug. 2025 – Jun. 2026, Expected)&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Vanderbilt University&lt;/strong&gt; - Bachelor of Arts in Mathematics, GPA: 4.00 (Aug. 2024 – May. 2025)&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;UC Santa Barbara&lt;/strong&gt; - Bachelor of Arts in Applied Mathematics, GPA: 4.00 (Sep. 2023 – Jun. 2024)&lt;/li&gt;
+&lt;/ul&gt;
+        </div>
+        <button class="copy-btn" onclick="copyCode('education-code')">Copy Education Code</button>
+    </div>
+
+    <div class="editor-section">
+        <h2 class="section-title">📞 Contact Information</h2>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" value="tianruo.you@berkeley.edu" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" value="+1 (805) 724-9206" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" value="730 Kinkead Way, Albany, CA 94706" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <input type="text" id="website" value="http://www.youtianruo.com" oninput="updatePreview()">
+        </div>
+        
+        <div class="preview">
+            <h3>Preview:</h3>
+            <div style="background: #f9f9f9; padding: 15px; border-radius: 5px;">
+                <p><strong>Email:</strong> <span id="email-preview">tianruo.you@berkeley.edu</span></p>
+                <p><strong>Phone:</strong> <span id="phone-preview">+1 (805) 724-9206</span></p>
+                <p><strong>Address:</strong> <span id="address-preview">730 Kinkead Way, Albany, CA 94706</span></p>
+                <p><strong>Website:</strong> <a href="#" id="website-preview">http://www.youtianruo.com</a></p>
+            </div>
+        </div>
+        
+        <div class="code-output" id="contact-code">
+&lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; tianruo.you@berkeley.edu&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Phone:&lt;/strong&gt; +1 (805) 724-9206&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Address:&lt;/strong&gt; 730 Kinkead Way, Albany, CA 94706&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Website:&lt;/strong&gt; &lt;a href="http://www.youtianruo.com"&gt;http://www.youtianruo.com&lt;/a&gt;&lt;/p&gt;
+        </div>
+        <button class="copy-btn" onclick="copyCode('contact-code')">Copy Contact Code</button>
+    </div>
+
+    <div class="instructions">
+        <h3>📋 Next Steps</h3>
+        <ol>
+            <li><strong>Edit the fields above</strong> with your information</li>
+            <li><strong>Copy the generated code</strong> for each section you want to change</li>
+            <li><strong>Open your index.html file</strong> (in GitHub or locally)</li>
+            <li><strong>Find the corresponding section</strong> and replace it with your new code</li>
+            <li><strong>Save and upload</strong> to see changes on your live site</li>
+        </ol>
+    </div>
+
+    <script>
+        function updatePreview() {
+            // Update header
+            document.getElementById('name-preview').textContent = document.getElementById('name').value;
+            document.getElementById('title-preview').textContent = document.getElementById('title').value;
+            
+            // Update about
+            document.getElementById('about1-preview').textContent = document.getElementById('about1').value;
+            document.getElementById('about2-preview').textContent = document.getElementById('about2').value;
+            
+            // Update interests
+            const interests = [
+                document.getElementById('interest1').value,
+                document.getElementById('interest2').value,
+                document.getElementById('interest3').value,
+                document.getElementById('interest4').value
+            ];
+            
+            interests.forEach((interest, index) => {
+                const [title, description] = interest.split(':');
+                document.getElementById(`interest${index + 1}-preview`).innerHTML = 
+                    `<strong>${title}</strong>: ${description}`;
+            });
+            
+            // Update education
+            const educations = [
+                document.getElementById('education1').value,
+                document.getElementById('education2').value,
+                document.getElementById('education3').value
+            ];
+            
+            educations.forEach((education, index) => {
+                const [school, details] = education.split(' - ');
+                document.getElementById(`education${index + 1}-preview`).innerHTML = 
+                    `<strong>${school}</strong> - ${details}`;
+            });
+            
+            // Update contact
+            document.getElementById('email-preview').textContent = document.getElementById('email').value;
+            document.getElementById('phone-preview').textContent = document.getElementById('phone').value;
+            document.getElementById('address-preview').textContent = document.getElementById('address').value;
+            document.getElementById('website-preview').textContent = document.getElementById('website').value;
+            document.getElementById('website-preview').href = document.getElementById('website').value;
+            
+            // Update code outputs
+            updateCodeOutputs();
+        }
+        
+        function updateCodeOutputs() {
+            // Header code
+            document.getElementById('header-code').textContent = 
+                `<h1>${document.getElementById('name').value}</h1>\n<p>${document.getElementById('title').value}</p>`;
+            
+            // About code
+            document.getElementById('about-code').textContent = 
+                `<p>${document.getElementById('about1').value}</p>\n<p>${document.getElementById('about2').value}</p>`;
+            
+            // Interests code
+            const interests = [
+                document.getElementById('interest1').value,
+                document.getElementById('interest2').value,
+                document.getElementById('interest3').value,
+                document.getElementById('interest4').value
+            ];
+            
+            let interestsCode = '<ul>\n';
+            interests.forEach(interest => {
+                const [title, description] = interest.split(':');
+                interestsCode += `    <li><strong>${title}</strong>: ${description}</li>\n`;
+            });
+            interestsCode += '</ul>';
+            document.getElementById('interests-code').textContent = interestsCode;
+            
+            // Education code
+            const educations = [
+                document.getElementById('education1').value,
+                document.getElementById('education2').value,
+                document.getElementById('education3').value
+            ];
+            
+            let educationCode = '<ul>\n';
+            educations.forEach(education => {
+                const [school, details] = education.split(' - ');
+                educationCode += `    <li><strong>${school}</strong> - ${details}</li>\n`;
+            });
+            educationCode += '</ul>';
+            document.getElementById('education-code').textContent = educationCode;
+            
+            // Contact code
+            document.getElementById('contact-code').textContent = 
+                `<p><strong>Email:</strong> ${document.getElementById('email').value}</p>\n` +
+                `<p><strong>Phone:</strong> ${document.getElementById('phone').value}</p>\n` +
+                `<p><strong>Address:</strong> ${document.getElementById('address').value}</p>\n` +
+                `<p><strong>Website:</strong> <a href="${document.getElementById('website').value}">${document.getElementById('website').value}</a></p>`;
+        }
+        
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const text = codeElement.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Code copied to clipboard!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Code copied to clipboard!');
+            });
+        }
+        
+        // Initialize on page load
+        updatePreview();
+    </script>
+</body>
+</html>
+>>>>>>> e3e7d1275d2ddb14649d85dcbfe82c266a598501
