@@ -1,254 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tianruo You - CV</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.4;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #000000;
-            font-size: 11pt;
-        }
-        .container {
-            max-width: 8.5in;
-            margin: 0 auto;
-            padding: 0.5in;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .header h1 {
-            font-size: 24pt;
-            font-weight: bold;
-            margin: 0 0 8px 0;
-            color: #000000;
-        }
-        .header h1 a {
-            color: #000000;
-            text-decoration: none;
-        }
-        .header h1 a:hover {
-            text-decoration: underline;
-        }
-        .header .contact {
-            font-size: 11pt;
-            margin: 0;
-            line-height: 1.2;
-        }
-        .header .contact a {
-            color: #000000;
-            text-decoration: none;
-        }
-        .header .contact a:hover {
-            text-decoration: underline;
-        }
-        .section {
-            margin-bottom: 15px;
-        }
-        .section-title {
-            font-size: 14pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 20px 0 10px 0;
-            padding-bottom: 2px;
-            border-bottom: 1px solid #000000;
-        }
-        .experience-item {
-            margin-bottom: 15px;
-        }
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 5px;
-        }
-        .experience-title {
-            font-weight: bold;
-            font-size: 11pt;
-        }
-        .experience-date {
-            font-style: italic;
-            font-size: 10pt;
-            text-align: right;
-        }
-        .experience-location {
-            font-style: italic;
-            font-size: 10pt;
-            margin-bottom: 5px;
-        }
-        .experience-description {
-            margin-left: 0;
-            padding-left: 0;
-        }
-        .experience-description ul {
-            margin: 5px 0;
-            padding-left: 20px;
-        }
-        .experience-description li {
-            margin-bottom: 3px;
-            font-size: 10pt;
-        }
-        .education-item {
-            margin-bottom: 10px;
-        }
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 2px;
-        }
-        .education-school {
-            font-weight: bold;
-            font-size: 11pt;
-        }
-        .education-date {
-            font-style: italic;
-            font-size: 10pt;
-        }
-        .education-location {
-            font-style: italic;
-            font-size: 10pt;
-            margin-bottom: 2px;
-        }
-        .education-degree {
-            font-size: 10pt;
-            margin-bottom: 5px;
-        }
-        .coursework {
-            font-size: 10pt;
-            margin-top: 10px;
-            font-style: italic;
-        }
-        @media print {
-            body {
-                font-size: 10pt;
-            }
-            .container {
-                padding: 0.25in;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tianruo You — Mathematics</title>
+  <meta name="description" content="Academic homepage of Tianruo You — Mathematics student at UC Berkeley. Research interests: topology, algebra, applied mathematics, scientific computing." />
+  <meta name="author" content="Tianruo You" />
+
+  <!-- Open Graph / Twitter for rich previews -->
+  <meta property="og:title" content="Tianruo You — Mathematics" />
+  <meta property="og:description" content="Academic homepage of Tianruo You — Mathematics student at UC Berkeley." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youtianruo.com/" />
+  <meta property="og:image" content="headshot.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #111827; /* zinc-900 */
+      --muted: #6b7280; /* gray-500 */
+      --border: #e5e7eb; /* gray-200 */
+      --card: #ffffff;
+      --accent: #003262; /* Berkeley blue */
+      --accent-2: #3B7EA1; /* lighter Berkeley blue */
+      --link: var(--accent);
+      --code-bg:#f8fafc;
+      --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.05);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0d12;
+        --text:#e5e7eb;
+        --muted:#9aa1ad;
+        --border:#1f2937;
+        --card:#0f1219;
+        --accent:#5aa7ff;
+        --accent-2:#84c1ff;
+        --link: var(--accent);
+        --code-bg:#0c1117;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+      }
+    }
+    [data-theme="light"]{color-scheme: light}
+    [data-theme="dark"]{color-scheme: dark}
+
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a{color:var(--link); text-decoration: none}
+    a:hover{text-decoration: underline}
+
+    .container{max-width: 1050px; margin: 0 auto; padding: 24px 20px 64px}
+
+    .skip{position: absolute; left: -999px; top: auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left: 12px; top: 12px; width:auto; height:auto; padding:8px 12px; background:var(--accent); color:white; border-radius:8px}
+
+    /* Header / Nav */
+    header{
+      position: sticky; top:0; z-index:50; backdrop-filter: saturate(180%) blur(6px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{display:flex; align-items:center; gap:14px; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:14px}
+    .brand .avatar{width:54px; height:54px; border-radius:12px; object-fit: cover; box-shadow: var(--shadow); border:1px solid var(--border)}
+    .brand .title{display:flex; flex-direction:column}
+    .brand h1{font-size:22px; line-height:1.1; margin:0; font-weight:700}
+    .brand .subtitle{font-size:14px; color:var(--muted); margin-top:2px}
+
+    .navlinks{display:flex; align-items:center; gap:14px; flex-wrap: wrap}
+    .navlinks a{padding:8px 10px; border-radius:10px}
+    .navlinks a:hover{background: color-mix(in oklab, var(--accent) 12%, transparent)}
+
+    .controls{display:flex; align-items:center; gap:8px}
+    .btn{border:1px solid var(--border); background:var(--card); border-radius:12px; padding:8px 12px; box-shadow: var(--shadow); display:inline-flex; align-items:center; gap:8px; cursor:pointer}
+    .btn:hover{border-color: color-mix(in oklab, var(--accent) 40%, var(--border))}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; margin-top:18px}
+    .hero-card{background: var(--card); border:1px solid var(--border); border-radius:16px; padding:22px; box-shadow: var(--shadow)}
+    .hero h2{font-size:28px; margin:0 0 8px}
+    .hero p{margin: 6px 0}
+    .quick{display:flex; flex-wrap: wrap; gap:10px; margin-top:12px}
+    .chip{border:1px solid var(--border); background: color-mix(in oklab, var(--accent) 6%, var(--card)); padding:6px 10px; border-radius:999px; font-size:13px}
+
+    /* Sections */
+    section{margin-top:36px}
+    .section-title{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px}
+    .section-title h3{font-size:18px; text-transform: uppercase; letter-spacing:.08em; margin:0}
+    .grid{display:grid; gap:14px}
+    .two{grid-template-columns: 1fr 1fr}
+    .three{grid-template-columns: repeat(3, 1fr)}
+    @media (max-width: 880px){
+      .hero{grid-template-columns: 1fr}
+      .two, .three{grid-template-columns: 1fr}
+      .brand .subtitle{display:none}
+    }
+
+    .card{background: var(--card); border:1px solid var(--border); border-radius:16px; padding:16px 18px; box-shadow: var(--shadow)}
+    .card h4{font-size:16px; margin:0 0 6px}
+    .meta{display:flex; flex-wrap: wrap; gap:10px; font-size:13px; color:var(--muted)}
+    .meta .dot::before{content:"• "; margin:0 4px}
+    .bullets{padding-left:18px; margin:8px 0 0}
+    .bullets li{margin:6px 0}
+
+    .timeline{position:relative}
+    .timeline::before{content:""; position:absolute; left:12px; top:6px; bottom:6px; width:2px; background: var(--border)}
+    .timeline .titem{position:relative; padding-left:34px; margin: 10px 0}
+    .timeline .titem::before{content:""; position:absolute; left:6px; top:6px; width:14px; height:14px; border-radius:50%; background: var(--accent); box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent)}
+
+    /* Lists */
+    .contact-list{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    @media (max-width:600px){.contact-list{grid-template-columns: 1fr}}
+
+    .small{font-size:13px; color:var(--muted)}
+    .kbd{font: 12px/1.4 "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:var(--code-bg); border:1px solid var(--border); padding:2px 6px; border-radius:6px}
+
+    footer{margin-top:40px; padding-top:18px; border-top:1px solid var(--border); display:flex; justify-content:space-between; flex-wrap: wrap; gap:12px}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1><a href="http://youtianruo.com/">Tianruo You</a></h1>
-            <div class="contact">
-                730 Kinkead Way, Albany, CA 94706<br>
-                <a href="mailto:tianruo.you@berkeley.edu">tianruo.you@berkeley.edu</a> &nbsp;&nbsp;&nbsp; +1 (805) 724-9206 &nbsp;&nbsp;&nbsp; <a href="http://youtianruo.com/">http://www.youtianruo.com</a>
-            </div>
+  <a href="#main" class="skip">Skip to content</a>
+  <div class="container" id="top">
+    <header>
+      <nav class="nav" aria-label="Primary">
+        <div class="brand">
+          <!-- Add your headshot as headshot.jpg next to this file -->
+          <img src="headshot.jpg" alt="Portrait of Tianruo You" class="avatar" onerror="this.style.display='none'"/>
+          <div class="title">
+            <h1>Tianruo You</h1>
+            <div class="subtitle">Mathematics @ UC&nbsp;Berkeley</div>
+          </div>
         </div>
-
-        <div class="section">
-            <div class="section-title">Education</div>
-            
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="education-school">UC Berkeley</div>
-                    <div class="education-date">Aug. 2025 -- Jun. 2026 (Expected)</div>
-                </div>
-                <div class="education-location">Albany, CA</div>
-                <div class="education-degree">Bachelor of Arts in Mathematics &nbsp;&nbsp;&nbsp; GPA: 4.00</div>
-            </div>
-
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="education-school">Vanderbilt University</div>
-                    <div class="education-date">Aug. 2024 -- May. 2025</div>
-                </div>
-                <div class="education-location">Nashville, TN</div>
-                <div class="education-degree">Bachelor of Arts in Mathematics &nbsp;&nbsp;&nbsp; GPA: 4.00</div>
-            </div>
-
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="education-school">UC Santa Barbara</div>
-                    <div class="education-date">Sep. 2023 -- Jun. 2024</div>
-                </div>
-                <div class="education-location">Santa Barbara, CA</div>
-                <div class="education-degree">Bachelor of Arts in Applied Mathematics &nbsp;&nbsp;&nbsp; GPA: 4.00</div>
-            </div>
-
-            <div class="coursework">
-                Relevant Coursework: Advanced Matrix Computations, Advanced Linear Algebra, Abstract Algebra, Real Analysis, Differential Geometry, Topology.
-            </div>
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#research">Research</a>
+          <a href="#experience">Experience</a>
+          <a href="#cv">CV</a>
+          <a href="#contact">Contact</a>
         </div>
-
-        <div class="section">
-            <div class="section-title">Research Experiences</div>
-            
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Hairy Ball Theorem and Degree Theory Exploration</div>
-                    <div class="experience-date">Aug. 2025 - Present</div>
-                </div>
-                <div class="experience-location">Berkeley, CA</div>
-                <div class="experience-description">
-                    <strong>Research Student under Galen Liang</strong>
-                    <ul>
-                        <li>Applied degree theory to vector fields on spheres, using the pathway toward the Hairy Ball Theorem to strengthen understanding of algebraic topology methods, invariants such as the degree of a map, and the role of topological obstructions.</li>
-                        <li>Co-authoring a thesis on degree theory as an entry point into topology, emphasizing its utility in defining map degree, connecting manifold invariants, and framing classical results like the Hairy Ball Theorem.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Paul Atzberger Research Group</div>
-                    <div class="experience-date">Nov. 2023 - Jun. 2024</div>
-                </div>
-                <div class="experience-location">Santa Barbara, CA</div>
-                <div class="experience-description">
-                    <strong>Research Student under Paul Atzberger</strong>
-                    <ul>
-                        <li>Simulated cryptocurrency price triangulation using stochastic processes to model arbitrage opportunities, providing a quantitative explanation of the "kimchi premium."</li>
-                        <li>Applied a stochastic immersed boundary method to simulate fluid–structure interactions at microscopic length scales, advancing computational modeling of complex physical systems.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">NSF Big-Bee Project: Trait Digitalization of Anthophila</div>
-                    <div class="experience-date">Aug. 2023 - Present</div>
-                </div>
-                <div class="experience-location">Santa Barbara, CA | Berkeley, CA</div>
-                <div class="experience-description">
-                    <strong>Researcher</strong>
-                    <ul>
-                        <li>Developed a computer vision pipeline (OpenCV, scikit-learn, Python) to quantify disruptive camouflage in bees by detecting and clustering visual hotspots.</li>
-                        <li>Implemented a volumetric measurement pipeline with Agisoft Metashape to model and compare size variation in Bombus species through 3D reconstruction and computational morphometrics.</li>
-                        <li>Processed high-resolution imaging sets with ImageJ and Zerene Stacker to generate ultra-resolution photos, contributing finalized images to the NSF Big-Bee library, with one exhibited at the UCSB Main Library and the California Nature Art Museum.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="controls">
+          <button class="btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">🌓</button>
         </div>
+      </nav>
+    </header>
 
-        <div class="section">
-            <div class="section-title">Professional Experiences</div>
-            
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="experience-title">Syriac Text Digitalization and Database Development</div>
-                    <div class="experience-date">Aug. 2024 - May. 2025</div>
-                </div>
-                <div class="experience-location">Nashville, TN</div>
-                <div class="experience-description">
-                    <strong>Data Science Assistant under David A. Michelson</strong>
-                    <ul>
-                        <li>Repaired discrepancies in the Syriaca.org database by tracing entries back to original Syriac sources and applying targeted HTML edits, supporting the accurate digitalization of Syriac Christian manuscripts.</li>
-                        <li>Improved the accuracy and stability of the Syriac Reference Portal, enabling scholars to more reliably search, cross-reference, and analyze Syriac Christian texts.</li>
-                    </ul>
-                </div>
-            </div>
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="about">
+        <div class="hero-card">
+          <h2>Hi — I’m Tianruo. 👋</h2>
+          <p>
+            I am a Mathematics student at <strong>UC Berkeley</strong>. My interests include
+            <em>topology</em>, <em>algebra</em>, and <em>scientific computing</em>. I enjoy problems at the
+            interface of pure mathematics and computation — from degree theory and classical theorems
+            to modern simulation and computer vision.
+          </p>
+          <div class="quick" aria-label="Quick facts">
+            <span class="chip">GPA 4.00</span>
+            <span class="chip">Albany, CA</span>
+            <span class="chip">Open to research collaborations</span>
+          </div>
         </div>
-    </div>
+        <div class="hero-card">
+          <h2>Currently</h2>
+          <ul class="bullets">
+            <li>Exploring degree theory and the Hairy Ball Theorem as an entry to algebraic topology.</li>
+            <li>Continuing <span class="kbd">NSF Big-Bee</span> imaging + morphometrics work.</li>
+            <li>Building a clean, accessible corpus of my notes and projects (coming soon).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education">
+        <div class="section-title"><h3>Education</h3></div>
+        <div class="timeline">
+          <article class="titem card">
+            <h4>University of California, Berkeley</h4>
+            <div class="meta"><span>Albany, CA</span><span class="dot"></span><span>Aug. 2025 — Jun. 2026 (expected)</span></div>
+            <div class="small">B.A. in Mathematics — GPA: 4.00</div>
+            <div class="small" style="margin-top:6px">
+              Relevant coursework: Advanced Matrix Computations, Advanced Linear Algebra, Abstract Algebra, Real Analysis, Differential Geometry, Topology.
+            </div>
+          </article>
+          <article class="titem card">
+            <h4>Vanderbilt University</h4>
+            <div class="meta"><span>Nashville, TN</span><span class="dot"></span><span>Aug. 2024 — May. 2025</span></div>
+            <div class="small">B.A. in Mathematics — GPA: 4.00</div>
+          </article>
+          <article class="titem card">
+            <h4>University of California, Santa Barbara</h4>
+            <div class="meta"><span>Santa Barbara, CA</span><span class="dot"></span><span>Sep. 2023 — Jun. 2024</span></div>
+            <div class="small">B.A. in Applied Mathematics — GPA: 4.00</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section id="research">
+        <div class="section-title"><h3>Research</h3></div>
+        <div class="grid two">
+          <article class="card">
+            <h4>Hairy Ball Theorem & Degree Theory Exploration</h4>
+            <div class="meta"><span>Research student under Galen Liang</span><span class="dot"></span><span>Berkeley, CA</span><span class="dot"></span><span>Aug. 2025 — Present</span></div>
+            <ul class="bullets">
+              <li>Applied degree theory to vector fields on spheres; studied topological obstructions and invariants such as degree of a map.</li>
+              <li>Co-authoring a thesis introducing degree theory as an entry to topology and framing classical results like the Hairy Ball Theorem.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4>Paul Atzberger Research Group</h4>
+            <div class="meta"><span>Research student under Paul Atzberger</span><span class="dot"></span><span>Santa Barbara, CA</span><span class="dot"></span><span>Nov. 2023 — Jun. 2024</span></div>
+            <ul class="bullets">
+              <li>Simulated cryptocurrency price triangulation using stochastic processes to model arbitrage (explaining the “kimchi premium”).</li>
+              <li>Applied a stochastic immersed boundary method for micro-scale fluid–structure interaction simulations.</li>
+            </ul>
+          </article>
+
+          <article class="card" style="grid-column: 1 / -1">
+            <h4>NSF Big‑Bee: Trait Digitalization of <em>Anthophila</em></h4>
+            <div class="meta"><span>Researcher</span><span class="dot"></span><span>Santa Barbara, CA · Berkeley, CA</span><span class="dot"></span><span>Aug. 2023 — Present</span></div>
+            <ul class="bullets">
+              <li>Built a computer vision pipeline (OpenCV, scikit‑learn, Python) to quantify disruptive camouflage by detecting & clustering visual hotspots.</li>
+              <li>Implemented volumetric measurement with Agisoft Metashape for 3D reconstruction and morphometrics of <em>Bombus</em> species.</li>
+              <li>Processed high‑res imaging with ImageJ and Zerene Stacker; contributed final images to the NSF Big‑Bee library, including pieces exhibited at UCSB Main Library and California Nature Art Museum.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <div class="section-title"><h3>Professional Experience</h3></div>
+        <div class="grid one">
+          <article class="card">
+            <h4>Syriac Text Digitalization & Database Development</h4>
+            <div class="meta"><span>Data Science Assistant under David A. Michelson</span><span class="dot"></span><span>Nashville, TN</span><span class="dot"></span><span>Aug. 2024 — May. 2025</span></div>
+            <ul class="bullets">
+              <li>Repaired discrepancies in the <span class="kbd">Syriaca.org</span> database by tracing entries to original Syriac sources and performing targeted HTML edits.</li>
+              <li>Improved accuracy and stability of the Syriac Reference Portal to support scholarly search and cross‑reference of Syriac Christian texts.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Publications (optional placeholder) -->
+      <section id="publications">
+        <div class="section-title"><h3>Selected Writings</h3><span class="small">Add preprints/notes as they’re ready</span></div>
+        <div class="grid two">
+          <article class="card">
+            <h4>Degree Theory as an Entry to Topology (in preparation)</h4>
+            <div class="small">With G. Liang. Draft available upon request.</div>
+          </article>
+          <article class="card">
+            <h4>Camouflage & Morphometrics in <em>Bombus</em> (notes)</h4>
+            <div class="small">Pipeline summary and preliminary measurements.</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CV / Downloads -->
+      <section id="cv">
+        <div class="section-title"><h3>CV</h3></div>
+        <div class="card">
+          <p>Download a concise CV or view the full resume.</p>
+          <p>
+            <a class="btn" href="cv.pdf" download>⬇️ Download CV (PDF)</a>
+            <a class="btn" href="https://youtianruo.github.io/" target="_blank" rel="noopener">🌐 Full Resume / Site</a>
+          </p>
+          <p class="small">Place your compiled CV as <code>cv.pdf</code> next to this file.</p>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-title"><h3>Contact</h3></div>
+        <div class="grid two">
+          <div class="card">
+            <ul class="bullets" style="list-style: none; padding-left:0; margin:0">
+              <li><strong>Email:</strong> <a href="mailto:tianruo.you@berkeley.edu">tianruo.you@berkeley.edu</a></li>
+              <li><strong>Phone:</strong> <a href="tel:+18057249206">+1 (805) 724‑9206</a></li>
+              <li><strong>Location:</strong> Albany, CA 94706</li>
+              <li><strong>Web:</strong> <a href="https://youtianruo.com/">youtianruo.com</a></li>
+            </ul>
+          </div>
+          <div class="card">
+            <p class="small" style="margin:0 0 6px">Profiles (add any you use):</p>
+            <div class="quick">
+              <!-- Replace <#> with your URLs or remove chips you don't use -->
+              <a class="chip" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+              <a class="chip" href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+              <a class="chip" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+              <a class="chip" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="small">© <span id="y"></span> Tianruo You</div>
+      <div class="small">Last updated <span id="updated"></span></div>
+      <div class="small"><a href="#top">Back to top ↑</a></div>
+    </footer>
+  </div>
+
+  <!-- Theme + footer scripts -->
+  <script>
+    // Theme persistence
+    (function(){
+      const root = document.documentElement;
+      const key = 'theme-preference';
+      function setTheme(v){root.setAttribute('data-theme', v);}
+      function getPref(){return localStorage.getItem(key) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');}
+      setTheme(getPref());
+      document.getElementById('themeBtn').addEventListener('click', ()=>{
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        setTheme(next); localStorage.setItem(key, next);
+      });
+    })();
+
+    // Footer year and updated timestamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const d = new Date(document.lastModified);
+      const fmt = new Intl.DateTimeFormat(undefined, {year:'numeric', month:'short', day:'2-digit'});
+      document.getElementById('updated').textContent = fmt.format(d);
+    })();
+  </script>
+
+  <!-- JSON-LD structured data for a Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tianruo You",
+    "url": "https://youtianruo.com/",
+    "image": "headshot.jpg",
+    "email": "mailto:tianruo.you@berkeley.edu",
+    "telephone": "+18057249206",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Albany",
+      "addressRegion": "CA",
+      "postalCode": "94706",
+      "addressCountry": "US"
+    },
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of California, Berkeley"
+    },
+    "sameAs": [
+      "https://youtianruo.github.io/"
+    ]
+  }
+  </script>
+
+  <!-- Optional: Math rendering (uncomment if you plan to include inline LaTeX) -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script>renderMathInElement(document.body,{delimiters:[{left:"$",right:"$",display:false},{left:"$$",right:"$$",display:true}]});</script>
+  -->
+
+  <style media="print">
+    header, .controls, .navlinks, #themeBtn, footer a[href^="#"]{display:none !important}
+    .container{padding:0}
+    .card, .hero-card{box-shadow:none; border-color:#bbb}
+    a{text-decoration: none}
+  </style>
 </body>
 </html>
