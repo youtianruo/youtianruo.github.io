@@ -1,0 +1,44 @@
+{%- if site.author -%}
+  <ul class="social-media-list">
+    {%- if site.email -%}
+      <li>
+        <a href="mailto:{{ site.email }}">
+          <svg class="svg-icon">
+            <use xlink:href="{{ '/assets/minima-social-icons.svg#email' | relative_url }}"></use>
+          </svg>
+          <span class="username">{{ site.email }}</span>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if site.github -%}
+      <li>
+        <a href="https://github.com/{{ site.github }}">
+          <svg class="svg-icon">
+            <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+          </svg>
+          <span class="username">{{ site.github }}</span>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if site.linkedin -%}
+      <li>
+        <a href="https://linkedin.com/in/{{ site.linkedin }}">
+          <svg class="svg-icon">
+            <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
+          </svg>
+          <span class="username">{{ site.linkedin }}</span>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if site.twitter -%}
+      <li>
+        <a href="https://twitter.com/{{ site.twitter }}">
+          <svg class="svg-icon">
+            <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
+          </svg>
+          <span class="username">{{ site.twitter }}</span>
+        </a>
+      </li>
+    {%- endif -%}
+  </ul>
+{%- endif -%}
