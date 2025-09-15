@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Site Settings
 title: "Tianruo You"
 description: "Mathematics Student at UC Berkeley"
@@ -161,3 +162,165 @@ kramdown:
     block:
       line_numbers: false
       start_line: 1
+=======
+# Site Settings
+title: "Tianruo You"
+description: "Mathematics Student at UC Berkeley"
+url: "https://youtianruo.github.io"
+baseurl: ""
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:name/
+  talks:
+    output: true
+    permalink: /:collection/:name/
+  teaching:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author_profile: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+      author_profile: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      layout: "talk"
+      author_profile: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: "teaching"
+    values:
+      layout: "teaching"
+      author_profile: true
+      share: true
+      related: true
+
+# Site Author
+author:
+  name: "Tianruo You"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "Mathematics student at UC Berkeley with research interests in topology, differential geometry, and computational mathematics."
+  location: "Berkeley, CA"
+  email: "tianruo.you@berkeley.edu"
+  phone: "+1 (805) 724-9206"
+  address: "730 Kinkead Way, Albany, CA 94706"
+  website: "http://www.youtianruo.com"
+  twitter: ""
+  google_scholar: ""
+  github: ""
+  linkedin: ""
+  orcid: ""
+  researchgate: ""
+  impactstory: ""
+  bepress: ""
+  academia: ""
+  scopus: ""
+  publons: ""
+  wikipedia: ""
+
+# Site Footer
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:tianruo.you@berkeley.edu"
+    - label: "Website"
+      icon: "fas fa-fw fa-globe"
+      url: "http://www.youtianruo.com"
+
+# Site Search
+search: true
+
+# Site Analytics
+analytics:
+  provider: "google-universal"
+  google:
+    tracking_id: ""
+
+# Site Comments
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: ""
+
+# Site Sharing
+share: true
+
+# Site Related Posts
+related: true
+
+# Site Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Site Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Site Exclude
+exclude:
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"
+
+# Site Include
+include:
+  - "_pages"
+
+# Site Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Site Kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+>>>>>>> e574cd31745a1d05a288ed821e6c4e276dfd2f22
