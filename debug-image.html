@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Debug - Tianruo You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .debug-section {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .image-test {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+        }
+        .image-test img {
+            max-width: 200px;
+            border: 2px solid #2a7ae2;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .error {
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #d32f2f;
+        }
+        .success {
+            color: #2e7d32;
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #2e7d32;
+        }
+        .info {
+            color: #1976d2;
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #1976d2;
+        }
+        .url-box {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            border: 1px solid #ddd;
+        }
+        .test-button {
+            background: #2a7ae2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #1e5bb8;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status-success { background: #4caf50; }
+        .status-error { background: #f44336; }
+        .status-warning { background: #ff9800; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Image Debug Tool</h1>
+    <p>This tool will help diagnose why your profile photo isn't showing.</p>
+    
+    <div class="debug-section">
+        <h2>📊 Current Status</h2>
+        <div id="status-summary">
+            <p><span class="status-indicator status-warning"></span>Checking image status...</p>
+        </div>
+    </div>
+
+    <div class="debug-section">
+        <h2>🔗 URL Tests</h2>
+        <p>Testing different possible URLs for your image:</p>
+        
+        <h3>Test 1: Absolute Path</h3>
+        <div class="url-box" id="url1">https://youtianruo.github.io/assets/images/bio-photo.jpg</div>
+        <div class="image-test">
+            <img src="https://youtianruo.github.io/assets/images/bio-photo.jpg" 
+                 alt="Test 1" 
+                 onload="showSuccess('test1')" 
+                 onerror="showError('test1', 'Image not found at absolute URL')">
+            <div id="test1-result"></div>
+        </div>
+
+        <h3>Test 2: Relative Path (with slash)</h3>
+        <div class="url-box" id="url2">/assets/images/bio-photo.jpg</div>
+        <div class="image-test">
+            <img src="/assets/images/bio-photo.jpg" 
+                 alt="Test 2" 
+                 onload="showSuccess('test2')" 
+                 onerror="showError('test2', 'Image not found at relative URL with slash')">
+            <div id="test2-result"></div>
+        </div>
+
+        <h3>Test 3: Relative Path (without slash)</h3>
+        <div class="url-box" id="url3">assets/images/bio-photo.jpg</div>
+        <div class="image-test">
+            <img src="assets/images/bio-photo.jpg" 
+                 alt="Test 3" 
+                 onload="showSuccess('test3')" 
+                 onerror="showError('test3', 'Image not found at relative URL without slash')">
+            <div id="test3-result"></div>
+        </div>
+
+        <h3>Test 4: Root Directory</h3>
+        <div class="url-box" id="url4">bio-photo.jpg</div>
+        <div class="image-test">
+            <img src="bio-photo.jpg" 
+                 alt="Test 4" 
+                 onload="showSuccess('test4')" 
+                 onerror="showError('test4', 'Image not found in root directory')">
+            <div id="test4-result"></div>
+        </div>
+    </div>
+
+    <div class="debug-section">
+        <h2>🛠️ Quick Fixes</h2>
+        <div class="info">
+            <strong>If any test above shows your image:</strong>
+            <ul>
+                <li>Copy the working URL</li>
+                <li>Update your <code>index.html</code> file</li>
+                <li>Replace the image src with the working URL</li>
+            </ul>
+        </div>
+        
+        <h3>Alternative Solutions:</h3>
+        <button class="test-button" onclick="usePlaceholder()">Use Placeholder Image</button>
+        <button class="test-button" onclick="useExternalImage()">Use External Image</button>
+        <button class="test-button" onclick="showUploadInstructions()">Show Upload Instructions</button>
+    </div>
+
+    <div class="debug-section">
+        <h2>📋 Upload Checklist</h2>
+        <div id="checklist">
+            <p>✅ <strong>File name:</strong> Must be exactly "bio-photo.jpg"</p>
+            <p>✅ <strong>File location:</strong> Must be in "assets/images/" folder</p>
+            <p>✅ <strong>File size:</strong> Should be under 1MB</p>
+            <p>✅ <strong>File format:</strong> JPG or PNG</p>
+            <p>✅ <strong>Deployment:</strong> Wait 5-10 minutes after upload</p>
+            <p>✅ <strong>Browser cache:</strong> Clear cache (Ctrl+F5)</p>
+        </div>
+    </div>
+
+    <div class="debug-section">
+        <h2>🔧 Manual Test</h2>
+        <p>Try accessing these URLs directly in your browser:</p>
+        <ul>
+            <li><a href="https://youtianruo.github.io/assets/images/bio-photo.jpg" target="_blank">https://youtianruo.github.io/assets/images/bio-photo.jpg</a></li>
+            <li><a href="https://youtianruo.github.io/assets/images/" target="_blank">https://youtianruo.github.io/assets/images/</a></li>
+        </ul>
+    </div>
+
+    <div id="solutions" style="display: none;">
+        <div class="debug-section">
+            <h2>💡 Solutions</h2>
+            <div id="solution-content"></div>
+        </div>
+    </div>
+
+    <script>
+        let testResults = {};
+        
+        function showSuccess(testId) {
+            testResults[testId] = 'success';
+            document.getElementById(testId + '-result').innerHTML = 
+                '<div class="success">✅ Image loaded successfully!</div>';
+            updateStatusSummary();
+        }
+        
+        function showError(testId, message) {
+            testResults[testId] = 'error';
+            document.getElementById(testId + '-result').innerHTML = 
+                '<div class="error">❌ ' + message + '</div>';
+            updateStatusSummary();
+        }
+        
+        function updateStatusSummary() {
+            const successCount = Object.values(testResults).filter(r => r === 'success').length;
+            const totalTests = Object.keys(testResults).length;
+            
+            if (successCount > 0) {
+                document.getElementById('status-summary').innerHTML = 
+                    '<div class="success">✅ Found ' + successCount + ' working image path(s)!</div>';
+            } else if (totalTests >= 4) {
+                document.getElementById('status-summary').innerHTML = 
+                    '<div class="error">❌ No working image paths found. Check upload instructions.</div>';
+            }
+        }
+        
+        function usePlaceholder() {
+            document.getElementById('solutions').style.display = 'block';
+            document.getElementById('solution-content').innerHTML = `
+                <div class="info">
+                    <h3>Use Placeholder Image</h3>
+                    <p>Replace your image src with this placeholder:</p>
+                    <div class="url-box">https://via.placeholder.com/400x400/2a7ae2/ffffff?text=Tianruo+You</div>
+                    <p>Update your index.html:</p>
+                    <pre><code>&lt;img src="https://via.placeholder.com/400x400/2a7ae2/ffffff?text=Tianruo+You" alt="Tianruo You"&gt;</code></pre>
+                </div>
+            `;
+        }
+        
+        function useExternalImage() {
+            document.getElementById('solutions').style.display = 'block';
+            document.getElementById('solution-content').innerHTML = `
+                <div class="info">
+                    <h3>Use External Image Hosting</h3>
+                    <ol>
+                        <li>Upload your photo to <a href="https://imgur.com" target="_blank">Imgur</a> or <a href="https://drive.google.com" target="_blank">Google Drive</a></li>
+                        <li>Get the direct image URL</li>
+                        <li>Update your index.html with that URL</li>
+                    </ol>
+                </div>
+            `;
+        }
+        
+        function showUploadInstructions() {
+            document.getElementById('solutions').style.display = 'block';
+            document.getElementById('solution-content').innerHTML = `
+                <div class="info">
+                    <h3>Correct Upload Instructions</h3>
+                    <ol>
+                        <li>Go to your GitHub repository</li>
+                        <li>Navigate to <code>assets/images/</code> folder</li>
+                        <li>Click "Add file" → "Upload files"</li>
+                        <li>Upload your photo and name it exactly: <code>bio-photo.jpg</code></li>
+                        <li>Commit the changes</li>
+                        <li>Wait 5-10 minutes for deployment</li>
+                    </ol>
+                </div>
+            `;
+        }
+        
+        // Auto-update URLs based on current domain
+        window.onload = function() {
+            const currentDomain = window.location.origin;
+            document.getElementById('url1').textContent = currentDomain + '/assets/images/bio-photo.jpg';
+            document.getElementById('url2').textContent = '/assets/images/bio-photo.jpg';
+        };
+    </script>
+</body>
+</html>
