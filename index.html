@@ -170,8 +170,12 @@
             <a class="chip" href="https://linkedin.com/in/tianruo-you" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
-        <div class="hero-card" style="display: flex; align-items: center; justify-content: center; padding: 32px;">
-          <img src="photo.jpg" alt="Tianruo You" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow);" onerror="this.parentElement.innerHTML='<p style=\'text-align:center;color:var(--muted)\'>Photo coming soon<br><small>Add photo.jpg to display your image</small></p>'"/>
+        <div class="hero-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px;">
+          <img src="photo.jpg" alt="Tianruo You" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 16px;" onerror="this.parentElement.querySelector('img').style.display='none'"/>
+          <p style="text-align: center; margin: 0; line-height: 1.5;">
+            <strong style="color: var(--accent);">"Hairy Ball Theorem"</strong><br>
+            <span style="font-size: 14px; color: var(--muted);">Topology says: every hairy sphere must go bald somewhere — including me, eventually.</span>
+          </p>
         </div>
       </section>
 
@@ -430,6 +434,7 @@
   </style>
 </body>
 </html>
+
 
 
 
