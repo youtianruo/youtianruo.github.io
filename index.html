@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tianruo You — Mathematics</title>
-  <meta name="description" content="Academic homepage of Tianruo You — Mathematics student at UC Berkeley. Research interests: topology, algebra, applied mathematics, scientific computing." />
+  <meta name="description" content="Academic homepage of Tianruo You — Mathematics student at UC Berkeley. Research interests: topology, algebra, normalizing flows, scientific computing, machine learning, and computer vision." />
   <meta name="author" content="Tianruo You" />
 
   <!-- Open Graph / Twitter for rich previews -->
@@ -98,6 +98,7 @@
     .section-title{display:flex; align-items:center; justify-content:space-between; margin-bottom:14px}
     .section-title h3{font-size:18px; text-transform: uppercase; letter-spacing:.08em; margin:0}
     .grid{display:grid; gap:14px}
+    .one{grid-template-columns: 1fr}
     .two{grid-template-columns: 1fr 1fr}
     .three{grid-template-columns: repeat(3, 1fr)}
     @media (max-width: 880px){
@@ -144,6 +145,8 @@
         <div class="navlinks">
           <a href="#about">About</a>
           <a href="#education">Education</a>
+          <a href="#awards">Awards</a>
+          <a href="#projects">Projects</a>
           <a href="#research">Research</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
@@ -155,12 +158,12 @@
       <!-- Hero -->
       <section class="hero" id="about">
         <div class="hero-card">
-          <h2>Hi — I’m Tianruo. 👋</h2>
+          <h2>Hi — I'm Tianruo. 👋</h2>
           <p>
-            I am a Mathematics student at <strong>UC Berkeley</strong>. My interests include
-            <em>topology</em>, <em>algebra</em>, and <em>scientific computing</em>. I enjoy problems at the
-            interface of pure mathematics and computation — from degree theory and classical theorems
-            to modern simulation and computer vision.
+            I am a Mathematics student at <strong>UC Berkeley</strong>. My interests span
+            <em>topology</em>, <em>algebra</em>, <em>scientific computing</em>, and <em>machine learning</em>. 
+            I enjoy problems at the interface of pure mathematics and computation — from differential 
+            geometry and topological theorems to normalizing flows, sentiment modeling, and computer vision.
           </p>
           <div class="quick" aria-label="Quick facts">
             <span class="chip">GPA 4.00</span>
@@ -171,9 +174,9 @@
         <div class="hero-card">
           <h2>Currently</h2>
           <ul class="bullets">
-            <li>Exploring degree theory and the Hairy Ball Theorem as an entry to algebraic topology.</li>
-            <li>Continuing <span class="kbd">NSF Big-Bee</span> imaging + morphometrics work.</li>
-            <li>Building a clean, accessible corpus of my notes and projects (coming soon).</li>
+            <li>Working on efficient computation of Jacobian determinants in Normalizing Flows with Ming Gu.</li>
+            <li>Exploring the Poincaré–Hopf Theorem and its applications in topology with Galen Liang.</li>
+            <li>Continuing <span class="kbd">NSF Big-Bee</span> imaging and trait digitalization work.</li>
           </ul>
         </div>
       </section>
@@ -198,65 +201,143 @@
           <article class="titem card">
             <h4>University of California, Santa Barbara</h4>
             <div class="meta"><span>Santa Barbara, CA</span><span class="dot"></span><span>Sep. 2023 — Jun. 2024</span></div>
-            <div class="small">B.A. in Applied Mathematics — GPA: 4.00</div>
+            <div class="small">B.A. in Applied Mathematics — GPA: 3.97</div>
           </article>
         </div>
       </section>
 
-      <!-- Research -->
+      <!-- Coursework -->
+      <section id="coursework">
+        <div class="section-title"><h3>Relevant Coursework</h3></div>
+        <div class="card">
+          <p style="margin:0">
+            <strong>Advanced Matrix Computations, Abstract Linear Algebra, Abstract Algebra, Real Analysis, Differential Geometry, Topology, Linear Algebra, Advanced Probability and Statistics</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- Awards & Honors -->
+      <section id="awards">
+        <div class="section-title"><h3>Awards &amp; Honors</h3></div>
+        <div class="timeline">
+          <article class="titem card">
+            <h4>Three FRAP Grants, UC Santa Barbara</h4>
+            <div class="meta"><span>Santa Barbara, CA</span><span class="dot"></span><span>2023, 2024, 2024</span></div>
+            <div class="small">Each grant valued at $750</div>
+          </article>
+          <article class="titem card">
+            <h4>UCSB Library Research Showcase Poster</h4>
+            <div class="meta"><span>Santa Barbara, CA</span><span class="dot"></span><span>2024</span></div>
+            <div class="small">"Trait Digitalization of Anthophila" (NSF Project #DBI2102006), accepted and presented (<a href="https://escholarship.org/uc/item/8xd7s974" target="_blank" rel="noopener">link</a>)</div>
+          </article>
+          <article class="titem card">
+            <h4>California Nature Art Museum Exhibition</h4>
+            <div class="meta"><span>Solvang, CA</span><span class="dot"></span><span>2024</span></div>
+            <div class="small">High-resolution image of <em>Agapostemon texanus</em> from NSF Big-Bee project selected for public exhibition</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="section-title"><h3>Projects</h3></div>
+        <div class="grid two">
+          <article class="card">
+            <h4>Efficient Computation of Jacobian Determinants in Normalizing Flows</h4>
+            <div class="meta"><span>With Jonathan Opitz and Boldizsar (Bodi) Szabo. Under Ming Gu</span><span class="dot"></span><span>Berkeley, CA</span><span class="dot"></span><span>Aug. 2025 — Present</span></div>
+            <ul class="bullets">
+              <li>Identified the computational bottleneck of <strong>Normalizing Flows (NFs)</strong> in the calculation of the Jacobian determinant within the flow's transformation, especially in cases of higher-dimensional domains, such as image generation (D ~ 10<sup>5</sup>).</li>
+              <li>Proposed possible more efficient strategies including <strong>Triangular Jacobians, Sylvester low-rank updates, and Hutchinson trace estimators</strong>, implementing metrics like runtime per epoch, memory usage, gradient Norms/variance, condition Number and Fréchet inception distance.</li>
+              <li>Reduced the Jacobian determinant computational cost from <strong>O(D<sup>3</sup>) to O(D) or O(m<sup>3</sup>) for m ≪ D</strong>, enabling scalable likelihood-based training on high-dimensional data.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4>Poincaré–Hopf Theorem and its Application in Topology</h4>
+            <div class="meta"><span>Under Galen Liang</span><span class="dot"></span><span>Berkeley, CA</span><span class="dot"></span><span>Aug. 2025 — Present</span></div>
+            <ul class="bullets">
+              <li>By sketching observed examples and categorizing points into <strong>circular, sink/source, saddle, and dipole points</strong>, generalized cases into a formative proof of <strong>Poincaré–Hopf</strong>, specifically in 2-dimensional spaces.</li>
+              <li>Through interpreting Poincaré–Hopf, bridged analytic phenomena to dynamics (zero points) with topology and <strong>Euler characteristic</strong>, one of the most well-known topological invariants.</li>
+              <li>Using the corollary of Hairy Ball Theorem, topologically explained why people cannot successfully comb their hair to avoid the "balding point."</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4>Advancing Crypto-Market Sentiment Modeling</h4>
+            <div class="meta"><span>Under Robert Anderson, Stephen Bianchi</span><span class="dot"></span><span>Berkeley, CA</span><span class="dot"></span><span>Apr. 2025 — Present</span></div>
+            <ul class="bullets">
+              <li>Adopted transformer-based financial sentiment analysis technology to develop <strong>a sentiment-augmented GARCH model</strong> and processed influential commentaries from social media.</li>
+              <li>Incorporated real-time sentiment data (such as geopolitical shifts and policy reversals) into volatility model, applying <strong>Chow, CUSUM, and ICSS</strong> to test parameter stability.</li>
+              <li>Validated output precision through correlation analyses and statistical tests against the model-identified event timeline and the actual human annotations.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Research Experiences -->
       <section id="research">
-        <div class="section-title"><h3>Research</h3></div>
+        <div class="section-title"><h3>Research Experiences</h3></div>
         <div class="grid two">
-
           <article class="card">
-            <h4>LLM-based Analysis of Monetary Policy Effects on Stablecoin Behaviors</h4>
-            <div class="meta"><span>Researcher under Stephen Bianchi</span><span class="dot"></span><span>Berkeley, CA</span><span class="dot"></span><span>Jun. 2025 — Sep. 2025</span></div>
+            <h4>Manifold-based Representation Learning for Dynamical Systems (GD-VAE)</h4>
+            <div class="meta"><span>Under Paul Atzberger</span><span class="dot"></span><span>Santa Barbara, CA</span><span class="dot"></span><span>Nov. 2023 — Jun. 2024</span></div>
             <ul class="bullets">
-              <li>Developed LLM-based models to study stablecoin volatility under monetary policies, incorporating social perception and sentiment dynamics alongside macroeconomic variables.</li>
-              <li>Built predictive frameworks that generate fundamental, interpretable insights into stablecoin behavior—beyond numerical forecasts—bridging economic theory with AI-driven analysis.</li>
-            </ul>
-          </article>
-          
-          <article class="card">
-            <h4>Hairy Ball Theorem & Degree Theory Exploration</h4>
-            <div class="meta"><span>Research student under Galen Liang</span><span class="dot"></span><span>Berkeley, CA</span><span class="dot"></span><span>Aug. 2025 — Present</span></div>
-            <ul class="bullets">
-              <li>Applied degree theory to vector fields on spheres; studied topological obstructions and invariants such as degree of a map.</li>
-              <li>Co-authoring a thesis introducing degree theory as an entry to topology and framing classical results like the Hairy Ball Theorem.</li>
+              <li>Analyzed how traditional VAE/AEs <strong>misrepresent topologically non-Euclidean dynamics</strong>, causing twist or abrupt jumps in latent spaces; standard approach also potentially maps away from characterized locations during training.</li>
+              <li>Explored GD-VAE's approach in tailoring <strong>manifold latent spaces</strong> to solve the topological incompatibility; assessed the improvement in multi-step prediction robustness and stability by confining dynamics within the manifold.</li>
+              <li>Through applying appropriate manifolds, analyzed GD-VAE's more <strong>structured and disentangled embedding</strong> of temporal and state variables, revealing the underlying mechanisms behind observed behaviors.</li>
             </ul>
           </article>
 
           <article class="card">
-            <h4>Paul Atzberger Research Group</h4>
-            <div class="meta"><span>Research student under Paul Atzberger</span><span class="dot"></span><span>Santa Barbara, CA</span><span class="dot"></span><span>Nov. 2023 — Jun. 2024</span></div>
+            <h4>NSF Big-Bee Project: Trait Digitalization of Anthophila</h4>
+            <div class="meta"><span>Under Katja Seltmann</span><span class="dot"></span><span>Santa Barbara, CA | Berkeley, CA</span><span class="dot"></span><span>Aug. 2023 — Present</span></div>
             <ul class="bullets">
-              <li>Simulated cryptocurrency price triangulation using stochastic processes to model arbitrage (explaining the “kimchi premium”).</li>
-              <li>Applied a stochastic immersed boundary method for micro-scale fluid–structure interaction simulations.</li>
+              <li>Using ImageJ and Zerene Stacker, created <strong>ultra-resolution lateral shots for 1,000+ bee specimens</strong>, contributing to Big Bee Library, with one image exhibited at the California Nature Art Museum.</li>
+              <li>With Agisoft Metashape, reconstructed <strong>10+ 3D models of Xylocopa latipes</strong> (carpenter bees) and implemented a volumetric measurement workflow to study <strong>insular dwarfism</strong> in this species.</li>
+              <li>Using <strong>OpenCV, NumPy, and scikit-learn</strong>, clustered visual hotspots in bee images, quantifying the camouflage effectiveness from abdominal coloration (metallic green / yellow-black stripes).</li>
             </ul>
           </article>
 
           <article class="card">
-            <h4>NSF Big‑Bee: Trait Digitalization of <em>Anthophila</em></h4>
-            <div class="meta"><span>Researcher</span><span class="dot"></span><span>Santa Barbara, CA · Berkeley, CA</span><span class="dot"></span><span>Aug. 2023 — Present</span></div>
+            <h4>Quantitative Semantic Interpretation in Music Cognition</h4>
+            <div class="meta"><span>Under Janet Bourne</span><span class="dot"></span><span>Santa Barbara, CA</span><span class="dot"></span><span>Dec. 2023 — May. 2024</span></div>
             <ul class="bullets">
-              <li>Built a computer vision pipeline (OpenCV, scikit‑learn, Python) to quantify disruptive camouflage by detecting & clustering visual hotspots.</li>
-              <li>Implemented volumetric measurement with Agisoft Metashape for 3D reconstruction and morphometrics of <em>Bombus</em> species.</li>
-              <li>Processed high‑res imaging with ImageJ and Zerene Stacker; contributed final images to the NSF Big‑Bee library, including pieces exhibited at UCSB Main Library and California Nature Art Museum.</li>
+              <li>Through playing the same progressions (e.g., the Darth Vader theme) on different instruments (bagpipes, organs, etc.), coded Qualtrics forms, and collected written responses reflecting participants' impressions.</li>
+              <li>Applied the <strong>Meaning Extraction Method (MEM)</strong> to identify frequently used expressions in responses and generate lexical profiles for grouped responses.</li>
+              <li>Using SPSS and Amos, performed <strong>Exploratory Factor Analysis (EFA) and Confirmatory Factor Analysis (CFA)</strong> on MEM data, contributing to the understanding of latent semantic dimensions.</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <!-- Experience -->
+      <!-- Professional Experiences -->
       <section id="experience">
-        <div class="section-title"><h3>Experience</h3></div>
+        <div class="section-title"><h3>Professional Experiences</h3></div>
         <div class="grid two">
           <article class="card">
-            <h4>Syriac Text Digitalization and Database Development
-            <div class="meta"><span>Data Science Assistant under David A. Michelson</span><span class="dot"></span><span>Nashville, TN</span><span class="dot"></span><span>Aug. 2024 - May. 2025</span></div>
+            <h4>Syriac Text Digitalization and Database Development</h4>
+            <div class="meta"><span>Data Science Assistant under David A. Michelson</span><span class="dot"></span><span>Nashville, TN</span><span class="dot"></span><span>Aug. 2024 — May. 2025</span></div>
             <ul class="bullets">
-              <li>Repaired discrepancies in the Syriaca.org database by tracing entries back to original Syriac sources and applying targeted HTML edits, supporting the accurate digitalization of Syriac Christian manuscripts.
-              <li>Improved the accuracy and stability of the Syriac Reference Portal, enabling scholars to more reliably search, cross-reference, and analyze Syriac Christian texts.
+              <li>Repaired discrepancies in the Syriaca.org database by tracing entries back to original Syriac sources and applying targeted HTML edits, <strong>improving data accuracy for manuscript digitalization</strong>.</li>
+              <li>Enhanced the Syriac Reference Portal by refining cross-referencing and search systems, <strong>increasing stability and reliability for scholarly use</strong>.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4>Boston Scientific</h4>
+            <div class="meta"><span>Channel Operations Assistant</span><span class="dot"></span><span>Remote</span><span class="dot"></span><span>Apr. 2024 — Oct. 2024</span></div>
+            <ul class="bullets">
+              <li>Built a distributor value assessment framework and conducted full-scale analysis of <strong>2,000+ tier-2 distributors (user activity, terminal coverage, order conversion)</strong>, generating <strong>20+ visualization reports</strong> that informed core distributor segmentation strategies.</li>
+              <li>Led the annual distributor satisfaction survey, designing Likert-scale questionnaires and <strong>analyzing 500+ responses</strong> to identify three major pain points—order tracking delays, insufficient training resources, and slow system response—driving improvements in partner experience.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h4>Perception and Attribution in Police–Civilian Interactions</h4>
+            <div class="meta"><span>Behavioral Data Analyst under Diego Padilla, Kyle Ratner</span><span class="dot"></span><span>Santa Barbara, CA</span><span class="dot"></span><span>Dec. 2023 — Jun. 2024</span></div>
+            <ul class="bullets">
+              <li>Developed and tested attribution models in Social Perception sciences to analyze perceivers' judgments of cross-race interactions, especially policing, focusing on how the perceivers infer racism from aggressive police behaviors toward minority civilians.</li>
+              <li>Explored <strong>Causal Inference Frameworks</strong> (e.g., Kelley's Covariation Model, Gilbert's Three-Stage Model of Attribution) and tested using <strong>2x2 MANOVA, hierarchical regression, and structural equation modeling (SEM)</strong> to quantify dispositional and situational inference effects.</li>
             </ul>
           </article>
         </div>
