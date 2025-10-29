@@ -26,8 +26,8 @@
       --muted: #666666;
       --border: #e0e0e0;
       --card: #ffffff;
-      --accent: #dc2626; /* red-600 */
-      --accent-2: #ef4444; /* red-500 */
+      --accent: #DC143C; /* crimson */
+      --accent-2: #E63946; /* lighter crimson */
       --link: var(--accent);
       --code-bg:#f5f5f5;
       --shadow: 0 1px 3px rgba(0,0,0,.08), 0 6px 20px rgba(0,0,0,.06);
@@ -39,8 +39,8 @@
         --muted:#666666;
         --border:#e0e0e0;
         --card:#ffffff;
-        --accent:#dc2626;
-        --accent-2:#ef4444;
+        --accent:#DC143C;
+        --accent-2:#E63946;
         --link: var(--accent);
         --code-bg:#f5f5f5;
         --shadow: 0 1px 3px rgba(0,0,0,.08), 0 6px 20px rgba(0,0,0,.06);
@@ -159,7 +159,10 @@
       <section class="hero" id="about">
         <div class="hero-card">
           <p>
-            I am a pure math student at UC Berkeley. My primary background is in topology, differential geometry, and algebra. I'm now also becoming proficient in numerical mathematics and ML. I'm interested in geometric/topological solutions in statistical learning.
+            I am a pure math student at <strong>UC Berkeley</strong>. My primary background is in 
+            <em>topology</em>, <em>differential geometry</em>, and <em>algebra</em>. I'm now also becoming 
+            proficient in <em>numerical mathematics</em> and <em>ML</em>. I'm interested in geometric/topological 
+            solutions in statistical learning.
           </p>
           <div class="quick" aria-label="Quick facts">
             <span class="chip">GPA 4.00</span>
@@ -167,6 +170,10 @@
             <a class="chip" href="https://linkedin.com/in/tianruo-you" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
+        <div class="hero-card" style="display: flex; align-items: center; justify-content: center; padding: 32px;">
+          <img src="photo.jpg" alt="Tianruo You" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow);" onerror="this.parentElement.innerHTML='<p style=\'text-align:center;color:var(--muted)\'>Photo coming soon<br><small>Add photo.jpg to display your image</small></p>'"/>
+        </div>
+      </section>
 
       <!-- Education -->
       <section id="education">
@@ -176,6 +183,9 @@
             <h4>University of California, Berkeley</h4>
             <div class="meta"><span>Albany, CA</span><span class="dot"></span><span>Aug. 2025 — Jun. 2026 (expected)</span></div>
             <div class="small">B.A. in Mathematics — GPA: 4.00</div>
+            <div class="small" style="margin-top:6px">
+              Relevant coursework: Advanced Matrix Computations, Advanced Linear Algebra, Abstract Algebra, Real Analysis, Differential Geometry, Topology.
+            </div>
           </article>
           <article class="titem card">
             <h4>Vanderbilt University</h4>
@@ -423,8 +433,6 @@
   </style>
 </body>
 </html>
-
-
 
 
 
